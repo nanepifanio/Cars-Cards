@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/********* Global Style ***********/
+
+body, p, h1, ul, li {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: .9375rem;
+    color: #ffffffbf
+    ;
+    max-width: 210px;
+    line-height: 1.6;
+}
+
+a {
+    display: block;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: .9375rem;
+    color: #f2f2f2;
+    margin: 80px 0 10px 0;
+    padding: 15px 20px;
+    border: 2px solid #f2f2f2;
+    border-radius: 50px;
+    max-width: 100px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease-in;
+}
+
+a:hover {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 3rem;
+    margin: 30px 0;
+    color: #f2f2f2;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/************ Grid *****************/
+
+#structure {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, auto));
+    grid-template-areas: 
+        "sedan  suvs   luxury"
+        "footer footer footer"
+    ;
+    padding: 80px calc((100% - 960px) / 2);
+    justify-content: center;
+}
+
+#sedan, #suvs, #luxury{
+    padding: 40px;
+}
+
+#sedan {
+    background-color: #e38826;
+    border-radius: 8px 0 0 8px;
+    margin-left: 10px;
+    grid-area: sedan;
+}
+
+#suvs {
+    background-color: #006970;
+    grid-area: suvs;
+}
+
+#luxury {
+    background-color: #004241;
+    border-radius: 0 8px 8px 0;
+    margin-right: 10px;
+    grid-area: luxury;
+}
+
+#sedan a:hover {
+    color: #e38826;
+}
+
+#suvs a:hover {
+    color: #006970;
+}
+
+#luxury a:hover {
+    color: #004241;
+}
+
+#footer {
+    grid-area: footer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#footer p {
+    color: black;
+    max-width: 100%;
+}
+
+#footer a {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 1rem;
+    color: #006970;
+    text-decoration: underline;
+    border-radius: 0;
+    transition: none;
+}
+
+#footer a:hover {
+    background-color: unset;
+}
+
+/************* Mobile ***************/
+
+@media (max-width: 768px) {
+    #structure {
+        grid-template-areas: 
+            "sedan"
+            "suvs"
+            "luxury"
+            "footer"
+        ;
+        padding: 20px;
+    }
+
+    #sedan {
+        margin: 0;
+        border-radius: 8px 8px 0 0;
+    }
+
+    #luxury {
+        margin: 0;
+        border-radius:  0 0 8px 8px;
+    }
+
+    a {
+        margin-top: 40px ;
+    }
+
+    p {
+        max-width: 100%;
+    }
+}
